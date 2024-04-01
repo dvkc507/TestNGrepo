@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite">
+	<listeners>
+		<listener class-name="listners.MyTestListners" />
+		<listener class-name="io.qameta.allure.testng.AllureTestNg" />
+	</listeners>
+	<test thread-count="5" name="Test">
+		<classes>
+			<class name="tests.Scenario1" />
+			<class name="tests.Scenario2" />
+			<class name="tests.Scenario3" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
