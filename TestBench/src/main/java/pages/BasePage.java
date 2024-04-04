@@ -1,10 +1,12 @@
 package pages;
 
 import java.io.File;
+import java.time.Duration;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -20,7 +22,8 @@ public class BasePage {
 	}
 
 public void click(WebElement ele, String eleName, int... timeoutInSeconds){
-	int time = timeoutInSeconds.length>0 ? timeoutInSeconds[0] : defaultWaitTime;
+	int sec = timeoutInSeconds.length>0 ? timeoutInSeconds[0] : defaultWaitTime;
+	Duration time = Duration.ofSeconds(sec);
 	wait = new WebDriverWait(driver, time);
 	wait.until(ExpectedConditions.elementToBeClickable(ele));
 	ele.click();
@@ -37,7 +40,8 @@ public void actionSendKeys(WebElement ele, String eleName, String val, int... ti
 	System.out.println("provided text value :" +eleName);
 }
 public void actionsClick(WebElement ele, String eleName, int... timeoutInSeconds) {
-	int time = timeoutInSeconds.length>0 ? timeoutInSeconds[0] : defaultWaitTime;
+	int sec = timeoutInSeconds.length>0 ? timeoutInSeconds[0] : defaultWaitTime;
+	Duration time = Duration.ofSeconds(sec);
 	wait = new WebDriverWait(driver, time);
 	wait.until(ExpectedConditions.elementToBeClickable(ele));
 	a.moveToElement(ele).click().perform();
@@ -47,23 +51,23 @@ public void fileUpload(WebElement ele, String eleName,String filePath, int... ti
 	String path = System.getProperty("user.dir");
 	File f = new File(path+filePath);
 	System.out.println(f.getAbsolutePath());
-	int time = timeoutInSeconds.length>0 ? timeoutInSeconds[0] : defaultWaitTime;
-	wait = new WebDriverWait(driver, time);
+	int sec = timeoutInSeconds.length>0 ? timeoutInSeconds[0] : defaultWaitTime;
+	Duration time = Duration.ofSeconds(sec);
 	wait.until(ExpectedConditions.visibilityOf(ele));
 	ele.sendKeys(f.getAbsolutePath());
 	a.sendKeys(Keys.ENTER).perform();
 	System.out.println("File uploaded :" +eleName);	
 }
 public void actionsMoveToElement(WebElement ele, String eleName, int... timeoutInSeconds) {
-	int time = timeoutInSeconds.length>0 ? timeoutInSeconds[0] : defaultWaitTime;
-	wait = new WebDriverWait(driver, time);
+	int sec = timeoutInSeconds.length>0 ? timeoutInSeconds[0] : defaultWaitTime;
+	Duration time = Duration.ofSeconds(sec);
 	wait.until(ExpectedConditions.visibilityOf(ele));
 	a.moveToElement(ele).perform();
 	System.out.println("moved to element :" +eleName);
 }
 public void waitForAlert(int... timeoutInSeconds) {
-	int time = timeoutInSeconds.length>0 ? timeoutInSeconds[0] : defaultWaitTime;
-	wait = new WebDriverWait(driver, time);
+	int sec = timeoutInSeconds.length>0 ? timeoutInSeconds[0] : defaultWaitTime;
+	Duration time = Duration.ofSeconds(sec);
 	wait.until(ExpectedConditions.alertIsPresent());
 }
 }

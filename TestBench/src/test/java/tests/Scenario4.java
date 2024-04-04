@@ -1,6 +1,7 @@
 package tests;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
@@ -10,8 +11,8 @@ import pages.GooglePage;
 import utils.DriverHandler;
 
 public class Scenario4 {
-	WebDriver driver;
-	GooglePage GPobj;
+	private WebDriver driver;
+	private GooglePage GPobj;
 	@BeforeMethod
 	public void setup() {
 		this.driver=DriverHandler.getDriver();

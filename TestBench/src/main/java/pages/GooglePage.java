@@ -3,13 +3,14 @@ package pages;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class GooglePage extends BasePage{
-WebDriver driver;
+	WebDriver driver;
 	public GooglePage(WebDriver driver) {
 		super(driver);
 		this.driver= driver;

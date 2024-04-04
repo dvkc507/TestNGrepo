@@ -2,8 +2,11 @@ package pages;
 
 import java.util.Set;
 
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -67,7 +70,7 @@ public class WindowActionsPage extends BasePage{
 		driver.switchTo().window(parent);
 		System.out.println(driver.getTitle());
 	}
-	public void newWindow() {
+	public void nextWindow() {
 		click(NewWindowMessage, "NewWindowMessage", 10);
 		String parent = driver.getWindowHandle();
 		Set<String> set= driver.getWindowHandles();
@@ -81,6 +84,40 @@ public class WindowActionsPage extends BasePage{
 		}
 		driver.switchTo().window(parent);
 		System.out.println(driver.getTitle());
+	}
+	public void newWindow() {
+		/* it dint worked for selenium 3
+		 * Actions actions = new Actions(driver);
+		 * actions.keyDown(Keys.CONTROL).sendKeys("n").keyUp(Keys.CONTROL).build().
+		 * perform();
+		 */
+		/* even the below code is not working for windows
+		 * JavascriptExecutor js = (JavascriptExecutor)driver;
+		 * js.executeScript("window.open('about:blank','_blank');"); String parent =
+		 * driver.getWindowHandle(); Set<String> windows = driver.getWindowHandles();
+		 * for(String window: windows) { if(!window.equalsIgnoreCase(parent)) {
+		 * driver.switchTo().window(window); driver.get("https://google.com"); } }
+		 */
+
+	}
+	public void newTab() {
+		/* not working with selenium3 
+		 * Actions actions = new Actions(driver);
+		 * actions.keyDown(Keys.CONTROL).sendKeys("t").keyUp(Keys.CONTROL).build().
+		 * perform();
+		 */
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("window.open()");
+		String parent = driver.getWindowHandle();
+		Set<String> windows = driver.getWindowHandles();
+		for(String window: windows) {
+			if(!window.equalsIgnoreCase(parent)) {
+				driver.switchTo().window(window);
+				driver.get("https://google.com");
+				driver.manage().window().fullscreen();
+				System.out.println();
+			}
+		}
 	}
 	public void switchTab() {
 		click(NewTab, "NewTab", 10);

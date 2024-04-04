@@ -9,7 +9,7 @@
     <classes>
       <class name="tests.Scenario3">
         <methods>
-          <include name="tc1"/>
+          <include name="tc2"/>
           <include name="tearDown"/>
           <include name="setup"/>
         </methods>
