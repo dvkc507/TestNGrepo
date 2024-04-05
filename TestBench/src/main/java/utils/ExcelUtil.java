@@ -13,8 +13,16 @@ public class ExcelUtil {
 	XSSFWorkbook workbook;
     XSSFSheet sheet;
 	public XSSFSheet excelDataProvider() throws IOException {
-	file = new File("./TestData/UIData.xlsx");
-	fis = new FileInputStream(file);
+		/* the below file and using path directly in fis
+		 * In terms of functionality and performance, both approaches are equivalent.
+		 * The choice between them depends on your specific use case and coding style
+		 * preferences. If you need to perform additional operations on the file (e.g.,
+		 * checking its existence, getting its absolute path), using a File object can
+		 * be beneficial. Otherwise, directly passing the file path to FileInputStream
+		 * can be more concise.
+		 */
+	//file = new File("./TestData/UIData.xlsx");
+	fis = new FileInputStream("./TestData/UIData.xlsx");
 	workbook= new XSSFWorkbook(fis);
 	sheet = workbook.getSheet("Sheet1");
 		return sheet;

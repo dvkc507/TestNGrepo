@@ -5,13 +5,14 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import pages.FormPage;
 import utils.DriverHandler;
 import utils.ExcelUtil;
 import utils.ParameterUtil;
-public class Scenario1 {
+public class Scenario5 {
 	private WebDriver driver;
 	private FormPage FormPageobj;
 	private ExcelUtil exeUtil;
@@ -24,21 +25,20 @@ public class Scenario1 {
 		param = new ParameterUtil();
 		System.out.println("Inside Before Method of scenario1");
 	}
-	@Test(description="Form testing with utilities",alwaysRun=true, enabled=true, invocationCount=1)
+	@DataProvider(name = "ReadingEntireData")
+	
+	@Test(description="Form testing with utilities",alwaysRun=true, enabled=true, invocationCount=1, dependsOnMethods = "")
 	public void tc1() {
 		try {
 	driver.get("https://www.tutorialspoint.com/selenium/practice/selenium_automation_practice.php");
-	String stringValueFromExcel = exeUtil.getStringData();
-	int mobile = exeUtil.getNumericData();
-	String address = param.getParametersValue("address");
-	FormPageobj.enterName(stringValueFromExcel);
+	FormPageobj.enterName("Hello");
 	FormPageobj.enterEmail("abc@gmail.com");
 	FormPageobj.selectGender();
-	FormPageobj.enterMobileNo(String.valueOf(mobile));
+	FormPageobj.enterMobileNo("123456789");
 	FormPageobj.enterHobbies();
 	FormPageobj.datePicker();
 	FormPageobj.chooseFile("/IMG_6098.PNG");
-	FormPageobj.entercurrentaddress(address);
+	FormPageobj.entercurrentaddress(" address1");
 	FormPageobj.selectState();
 	FormPageobj.selectCity();
 	FormPageobj.submit();
