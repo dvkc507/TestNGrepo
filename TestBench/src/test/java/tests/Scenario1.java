@@ -30,6 +30,7 @@ public class Scenario1 {
 	driver.get("https://www.tutorialspoint.com/selenium/practice/selenium_automation_practice.php");
 	String stringValueFromExcel = exeUtil.getStringData();
 	int mobile = exeUtil.getNumericData();
+	String mobile2 = exeUtil.getStringData();
 	String address = param.getParametersValue("address");
 	FormPageobj.enterName(stringValueFromExcel);
 	FormPageobj.enterEmail("abc@gmail.com");

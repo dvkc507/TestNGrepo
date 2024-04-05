@@ -11,6 +11,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.qameta.allure.Allure;
+
 public class BasePage {
 	protected WebDriver driver;
 	private WebDriverWait wait;
@@ -28,16 +30,19 @@ public void click(WebElement ele, String eleName, int... timeoutInSeconds){
 	wait.until(ExpectedConditions.elementToBeClickable(ele));
 	ele.click();
 	System.out.println("Clicked on element :" +eleName);
+	Allure.step("Clicked on element :" +eleName);
 }
 public void sendKeys(WebElement ele, String eleName, String val, int... timeoutInSeconds){
 	click(ele, eleName, timeoutInSeconds);
 	ele.sendKeys(val);
 	System.out.println("provided text value :" +eleName);
+	Allure.step("provided text value :" +eleName);
 }
 public void actionSendKeys(WebElement ele, String eleName, String val, int... timeoutInSeconds){
 	actionsClick(ele, eleName, timeoutInSeconds);
 	ele.sendKeys(val);
 	System.out.println("provided text value :" +eleName);
+	Allure.step("provided text value :" +eleName);
 }
 public void actionsClick(WebElement ele, String eleName, int... timeoutInSeconds) {
 	int sec = timeoutInSeconds.length>0 ? timeoutInSeconds[0] : defaultWaitTime;
@@ -46,6 +51,7 @@ public void actionsClick(WebElement ele, String eleName, int... timeoutInSeconds
 	wait.until(ExpectedConditions.elementToBeClickable(ele));
 	a.moveToElement(ele).click().perform();
 	System.out.println("Clicked on element :" +eleName);
+	Allure.step("Clicked on element :" +eleName);
 }
 public void fileUpload(WebElement ele, String eleName,String filePath, int... timeoutInSeconds) {
 	String path = System.getProperty("user.dir");
@@ -57,6 +63,7 @@ public void fileUpload(WebElement ele, String eleName,String filePath, int... ti
 	ele.sendKeys(f.getAbsolutePath());
 	a.sendKeys(Keys.ENTER).perform();
 	System.out.println("File uploaded :" +eleName);	
+	Allure.step("File uploaded :" +eleName);
 }
 public void actionsMoveToElement(WebElement ele, String eleName, int... timeoutInSeconds) {
 	int sec = timeoutInSeconds.length>0 ? timeoutInSeconds[0] : defaultWaitTime;
@@ -64,10 +71,12 @@ public void actionsMoveToElement(WebElement ele, String eleName, int... timeoutI
 	wait.until(ExpectedConditions.visibilityOf(ele));
 	a.moveToElement(ele).perform();
 	System.out.println("moved to element :" +eleName);
+	Allure.step("moved to element :" +eleName);
 }
 public void waitForAlert(int... timeoutInSeconds) {
 	int sec = timeoutInSeconds.length>0 ? timeoutInSeconds[0] : defaultWaitTime;
 	Duration time = Duration.ofSeconds(sec);
 	wait.until(ExpectedConditions.alertIsPresent());
+	Allure.step("Alert wait");
 }
 }
