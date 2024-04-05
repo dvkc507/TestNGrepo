@@ -1,17 +1,22 @@
 package tests;
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import pages.FormPage;
 import utils.DriverHandler;
+import utils.ExcelUtil;
 public class Scenario1 {
 	private WebDriver driver;
 	private FormPage FormPageobj;
+	private ExcelUtil exeUtil;
 	@BeforeMethod
 	public void setup() {
+		exeUtil = new ExcelUtil();
 		driver = DriverHandler.getDriver();
 		FormPageobj = new FormPage(driver);
 		System.out.println("Inside Before Method of scenario1");
@@ -20,10 +25,12 @@ public class Scenario1 {
 	public void tc1() {
 		try {
 	driver.get("https://www.tutorialspoint.com/selenium/practice/selenium_automation_practice.php");
-	FormPageobj.enterName("Tala");
+	String stringValueFromExcel = exeUtil.getStringData();
+	int mobile = exeUtil.getNumericData();
+	FormPageobj.enterName(stringValueFromExcel);
 	FormPageobj.enterEmail("abc@gmail.com");
 	FormPageobj.selectGender();
-	FormPageobj.enterMobileNo("123456789");
+	FormPageobj.enterMobileNo(String.valueOf(mobile));
 	FormPageobj.enterHobbies();
 	FormPageobj.datePicker();
 	FormPageobj.chooseFile("/IMG_6098.PNG");
@@ -33,7 +40,7 @@ public class Scenario1 {
 	FormPageobj.submit();
 		}
 		catch(Exception e) {
-			e.getMessage();
+			System.out.println(e.getMessage());
 			e.printStackTrace();
 		}
 	}
@@ -42,5 +49,8 @@ public class Scenario1 {
 		System.out.println("Inside After Method of scenario1");
 		DriverHandler.quitDriver();
 	}
-
+@AfterSuite
+public void cleaning() throws IOException {
+	exeUtil.closingConnections();
+}
 }
