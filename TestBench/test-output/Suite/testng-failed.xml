@@ -7,13 +7,13 @@
   </listeners>
   <test name="Test(failed)">
     <classes>
-      <class name="tests.Scenario3">
+      <class name="tests.Scenario6">
         <methods>
-          <include name="tc2"/>
-          <include name="tearDown"/>
           <include name="setup"/>
+          <include name="Tc1"/>
+          <include name="cleanUp"/>
         </methods>
-      </class> <!-- tests.Scenario3 -->
+      </class> <!-- tests.Scenario6 -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

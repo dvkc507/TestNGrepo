@@ -1,1 +1,0 @@
-{"uuid":"dc542f16-eff6-435d-9be8-aee54bc7a0df","name":"tests.Scenario3.setup","children":["7febba5e-5d38-4d50-8af2-c13adc8d641b"],"description":"","befores":[{"name":"setup","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1711962217523,"stop":1711962218715}],"afters":[],"start":1711962217523,"stop":1711962218715}

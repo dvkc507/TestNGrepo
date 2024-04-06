@@ -11,6 +11,8 @@
 			<class name="tests.Scenario3" />
 			<class name="tests.Scenario4" /> 
 			<class name="tests.Scenario5" />
+			<class name="tests.Scenario6" />
+			<class name="tests.Scenario7" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
