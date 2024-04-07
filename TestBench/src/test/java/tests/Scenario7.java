@@ -37,6 +37,12 @@ public class Scenario7 {
 				connection.setConnectTimeout(10);
 				connection.connect();
 				if (connection.getResponseCode() >= 400) {
+					/*
+					 * 400 bad request url might be wrong
+					 *  404 page not found 
+					 *  408 request gateway timed out
+					 *   500 service not available
+					 */
 					Allure.step("Broken link found :" + link + " status code :" + connection.getResponseCode());
 				}
 			}

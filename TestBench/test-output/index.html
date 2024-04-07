@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\vdoppalapudi\AppData\Local\Temp\testng-eclipse--1336211970\testng-customsuite.xml</span>
+                    <span>C:\Users\vdoppalapudi\AppData\Local\Temp\testng-eclipse--944464920\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -102,7 +102,7 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="tests.Scenario7" class="method navigator-link" hash-for-method="tc1">tc1</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="prob.Pack2" class="method navigator-link" hash-for-method="longestConsecutiveOccurenceExample">longestConsecutiveOccurenceExample</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -120,16 +120,16 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">tests.Scenario7</span>
+              <span class="class-name">prob.Pack2</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="tc1">
-                  </a> <!-- tc1 -->
-                  <span class="method-name">tc1</span>
+                  <a name="longestConsecutiveOccurenceExample">
+                  </a> <!-- longestConsecutiveOccurenceExample -->
+                  <span class="method-name">longestConsecutiveOccurenceExample</span>
                   <em>
-(Program to find broken links in a page)                  </em>
+(LongestConsecutiveOccurenceExample)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -137,7 +137,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\vdoppalapudi\AppData\Local\Temp\testng-eclipse--1336211970\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\vdoppalapudi\AppData\Local\Temp\testng-eclipse--944464920\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -146,7 +146,11 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;tests.Scenario7&quot;/&gt;
+      &lt;class name=&quot;prob.Pack2&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;longestConsecutiveOccurenceExample&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- prob.Pack2 --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -188,14 +192,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'tc1')
-data.setCell(0, 2, 'tests.Scenario7')
-data.setCell(0, 3, 2333);
+data.setCell(0, 1, 'longestConsecutiveOccurenceExample')
+data.setCell(0, 2, 'prob.Pack2')
+data.setCell(0, 3, 58);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 seconds</span>
+              <span class="suite-total-time">Total running time: 58 ms</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -210,9 +214,32 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">9 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">prob.Pack2</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">reverseNumArray</span>
+                <br/>
+                <span class="ignored-method-name">print_0123</span>
+                <br/>
+                <span class="ignored-method-name">reverseCharArray</span>
+                <br/>
+                <span class="ignored-method-name">toUpperCase_Test</span>
+                <br/>
+                <span class="ignored-method-name">test</span>
+                <br/>
+                <span class="ignored-method-name">textEmptyVSBlank</span>
+                <br/>
+                <span class="ignored-method-name">reverseNumArr</span>
+                <br/>
+                <span class="ignored-method-name">countChar</span>
+                <br/>
+                <span class="ignored-method-name">isUpperCase_Test</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Default_suite" class="panel">
@@ -221,19 +248,11 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">tests.Scenario7</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">setup</span>
-                <span class="method-start">0 ms</span>
-              </div> <!-- configuration-method before -->
+              <div class="chronological-class-name">prob.Pack2</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">tc1</span>
-                <span class="method-start">2157 ms</span>
+                <span class="method-name">longestConsecutiveOccurenceExample</span>
+                <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">cleanup</span>
-                <span class="method-start">4505 ms</span>
-              </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
