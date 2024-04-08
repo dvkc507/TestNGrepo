@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="prob.Pack2">
+      <class name="prob.Pack3">
         <methods>
-          <include name="reverseCharArray"/>
+          <include name="a2b3c4TOaabbbcccc"/>
         </methods>
-      </class> <!-- prob.Pack2 -->
+      </class> <!-- prob.Pack3 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

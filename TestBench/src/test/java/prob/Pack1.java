@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 import sun.net.www.protocol.http.HttpURLConnection;
-
+//https://rahulshettyacademy.com/blog/index.php/java-interview-questions/
 public class Pack1 {
 	@Test(description="Random Number generation")
 	public void random() {

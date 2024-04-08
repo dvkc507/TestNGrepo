@@ -127,7 +127,7 @@ public class Pack2 {
 		char[] chArr = str.toCharArray();
 		int count = 0;
 		for (char ele : chArr) {
-			if (Character.isUpperCase(ele)) {
+			if (Character.isUpperCase(ele)) {// This method isUpperCase(ch) is only available for Character wrapper class not for String and char
 				System.out.println(ele + " is in upper case");
 				count++;
 			}
@@ -146,21 +146,21 @@ public class Pack2 {
 		int i = 0123;// we cant give prefix 0 for numbers
 		System.out.println(String.valueOf(i));// still getting 83
 	}
-	@Test(description = "LongestConsecutiveOccurenceExample")
-	public void longestConsecutiveOccurenceExample() {
+	@Test(description = "Min and Max")
+	public void minAndMax() {
 		int[] arr = { 4, 3, 25, 6, 7, 8, 9, 2, 3, 10 };
 		System.out.println(arr.length);
 		int min = arr[0];
 		int max = arr[0];
 		for(int i=1; i<arr.length; i++) {
-			if(arr[1]<min) {
-				min=arr[1];
+			if(arr[i]<min) {
+				min=arr[i];
 			}
-			else{
-				max=arr[1];
+			else if(arr[i]>max){
+				max=arr[i];
 			}		
 		}
-		System.out.println("Min value :"+min+" Max values are "+max);
+		System.out.println("Min value :"+min+" Max values is "+max);
 	}
 
 }
