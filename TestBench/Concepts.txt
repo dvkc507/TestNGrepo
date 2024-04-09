@@ -1,0 +1,322 @@
+IS -A relationship
+IS-A relationship is formed in inheritance, The class which inherit is known as subclass or child class. That means that child class is the type of parent class.
+For example, Orange is a Fruit, you need to extend fruit class to make IS-A relationship 
+class Fruit{
+    //some code
+}
+//IS-A relationship
+class Orange extends Fruit {
+//some code
+}
+----------------------------------
+HAS-A relationship is composition, which means you are creating the object of a class inside another class. Let’s take the example of Room. The room has a chair
+class Room {
+    Chair chair = new Chair();
+}
+-----------------------------------
+this keyword is used to refer current class instance/object
+
+this keyword can be used to
+
+Current class instance variable
+Invoke current class methods
+Invoke current class constructor
+Can be used to pass the argument to a method
+Can be used to pass the argument to a constructor
+Return the current class instance
+----------------------------------
+Super Keyword
+
+The super keyword is a reference variable that is used to refer to parent class objects
+super can be used to refer to immediate parent class instance variable
+super can be used to invoke the parent class method
+super can be used to invoke parent class Constructor
+------------------------------------
+The binding which can be resolved by the compile-time is static binding. The binding which will be resolved at the run time is known as dynamic binding.
+Type information is used for resolving static binding. Object information is used for resolving dynamic binding
+Method overloading is an example of static binding. Method overriding is an example of dynamic binding
+Static binding is also known as early binding. Dynamic binding is also known as late binding
+
+ClassABC ref = new ClassABC();
+reference is compile time binding
+new is dynamic binding
+------------------------------------
+In Java, you can make a class read-only by following certain practices:
+Make fields private: Ensure that all fields within the class are declared as private. This prevents direct access to the fields from outside the class.
+
+Provide getters, but no setters: Only provide getter methods for accessing the values of the fields. Do not provide setter methods to modify the values of the fields. This way, the values can be read but not modified externally.
+
+Make fields final: Optionally, you can also declare the fields as final. This ensures that the fields cannot be modified once they are initialized.
+------------------------------------
+What is Object Class explain?
+Object class is the parent of all classes by default, This is the root class.
+Every class has Object as a superclass
+Object class is part of java.lang package
+Some useful methods provided by Object Class
+toString(): returns the string representation of this object.
+getClass(): returns the Class class object of this object
+equals(Object obj): compares the given object to this object.
+finalize():  this is invoked by the garbage collector before the object is being garbage collected.
+--------------------------------------
+What is the difference between Mutable and Immutable Object? Explain String and StringBuilder in the same context
+A mutable object can be changed after it's created. An immutable object can't change.
+Mutable objects provide a method to change the content of the object. The immutable objects do not provide any method to change the values
+Considering String and StringBuilder
+When you alter the values of String new object is formed so String is immutable
+If you alter the values in StringBuidler no new object is formed so StringBuilder is mutable   
+-------------------------------------
+What are the different types of exceptions in java?
+Java Exceptions are broadly categorized into Checked and Un Checked exceptions.
+Checked exceptions are checked during compile time, Unchecked exceptions are thrown during run time.
+Consider if you are using eclipse IDE, checked exceptions are shown instantly inside your IDE, however, Unchecked exceptions are thrown only when you execute the program
+-------------------------------------
+Can we have try block without catch block? How do you handle multiple exception with single try block?
+Yes, we can have try block without catch block, in that case we need to have finally block associated with try block.
+  try {
+                      int a = 10;
+                      int b = a / 0;
+          }
+          finally {
+                System.out.println("Finally Executed");
+          }
+-----------------------------------------
+Tell me the difference between == and .equals
+== is operator and .equals is method
+== is used for comparison for memory address. .equals is used for competition of value
+String s1 = "Test";
+          String s2 = "Test";
+          String s3 = new String("Test");
+          System.out.println(s1 == s2); // prints true
+          System.out.println(s1 == s3); // prints false
+          System.out.println(s1.equals(s2)); // prints true
+          System.out.println(s1.equals(s3)); // prints true
+-----------------------------------------------
+String string = "Academy";
+char ch = string.charAt(1); // Returns c
+-----
+indexOf(): Returns the position of the first found occurrence of specified characters in a string
+String string2 = "Academy";
+int index = string2.indexOf("my"); //Returns 5
+-----
+String string1 = "Rahul Shetty";
+String string2 = " Academy";
+String str = string1.concat(string2); //Returns Rahul Shetty
+-----
+contains(): Checks whether a string contains a sequence of characters
+String string2 = " Academy";
+boolean bool = string2.contains("my"); //Returns true
+-----
+equals(): Compares two strings. Returns true if the strings are equal, and false if not
+String string1 = "Tiger";
+String string2 = "Tiger";
+boolean bool = string1.equals(string2);//Returns true
+-----
+equalsIgnoreCase() : Compares two strings, ignoring case considerations
+String string1 = "TiGer";
+String string2 = "TigeR";
+boolean bool = string1.equalsIgnoreCase(string2);//Returns true
+-----
+length(): Returns the length of a specified string
+String string = "Academy";
+int l = string.length(); //Returns 7
+-----
+isEmpty(): Checks whether a string is empty or not
+String string = "";
+boolean isEmpty = string.isEmpty(); //Returns true
+-----
+replace(): Searches a string for a specified value, and returns a new string where the specified values are replaced
+String string = "Academy";
+String newString = string.replace("my","-replacetest"); //Returns Acade-replacetest
+-----
+replaceAll(): Replaces each substring of this string that matches the given regular expression with the given replacement
+String string = "academy";
+String newString = string.replaceAll("a","O"); //Returns OcOdemy
+-----
+replaceFirst(): Replaces the first occurrence of a substring that matches the given regular expression with the given replacement
+String string = "academy";
+String newString = string.replaceFirst("a","O"); //Returns Ocademy
+-----
+split(): Splits a string into an array of substrings
+String string = "Rahul Shetty Academy";
+String[] newString = string.split(" ");
+// newString will have values like [Rahul, Shetty, Academy]
+-----
+substring(): Returns a new string which is the substring of a specified string
+String string = "Rahul Shetty Academy";
+String newString = string.substring(0,3); // Returns Rah
+-----
+toCharArray(): Converts this string to a new character array
+String string = "Academy";
+char[] charArray = string.toCharArray();
+//charArray will have values like ['A','c','a','d','e','m','y']  
+-----
+toLowerCase() : Converts a string to lower case letters
+String string = "AcAdEmY";
+String newString = string.toLowerCase(); // Returns academy
+-----
+trim(): Removes whitespace from both ends of a string
+String string = "           Academy       ";
+String newString = string.trim(); // Returns Academy
+-----------------------------
+9. Why should avoid static methods in Java? Explain
+A static method can be choose based on the requirement, as static method comes with its pros and cons.
+A static method belongs to class not to instance
+A static method cannot be overridden
+A non-static method cannot be called inside a static method
+A static method cannot refer to “this” or “super” keywords in any way
+
+Considering above, with the static method we cannot fully utilize the Object-Oriented Feature, so it is good practice to avoid static methods, however, there might be cases we might need to use the static method intentionally then we can go for the static method
+-------------------------------
+How can I use the thread concept in Java, Explain two types
+Threads can be implemented using two ways in Java,
+
+1. Extending Thread class
+2. Implementing Runnable interface
+Implementing Runnable interface
+public class Multi extends Thread {
+    public void run() {
+          System.out.println("Started...");
+    }
+    public static void main(String args[]) {
+          Multi t1 = new Multi();
+          t1.start();
+    }
+}
+
+public class MultiT implements Runnable {
+    public void run() {
+          System.out.println("Started...");
+    }
+    public static void main(String args[]) {
+          MultiT m1 = new MultiT();
+          Thread t1 = new Thread(m1);
+          t1.start();
+    }
+}
+---------------------------------
+Explain Different types of interfaces in the Collection framework
+Iterable collection Set List Queue Dequeue Map SortedSet SortedMap
+The Iterable interface is the root interface for all the collection classes
+The Collection interface is the interface that is implemented by all the classes in the collection framework
+---------------------------------
+Explain Collection and Collections in Java?
+The collection is an interface, with the Collection interface we can group various objects into a single unit. Collections is simply a utility class that is found in java.util package
+Collection can be considered as the root for major interfaces like Sets, Lists, Maps, Queue, Deque. Collections provide a method for developers to perform certain basic operations on elements.
+Not all the methods inside Collection is static. Collections has all static method
+Collection is used to store the list of objects in a single object. Collections is used to operate on a collection.
+Collections static methods are
+		Integer[] intArr = {3,4,5,1,2,};
+		List list = new ArrayList(Arrays.asList(intArr));
+		Collections.reverse(list);//[2, 1, 5, 4, 3]
+		System.out.println("After reversing: "+list);
+		
+		Collections.sort(list);//[1, 2, 3, 4, 5]
+		System.out.println("After sorting: "+list);
+		
+		Collections.shuffle(list);//[3, 5, 2, 4, 1]
+		System.out.println("After shuffling: "+list);
+		
+		Collections.sort(list,Collections.reverseOrder());//[5, 4, 3, 2, 1]
+		System.out.println("sort reverse order: "+list);
+		
+		Collections.fill(list, 0);//[0, 0, 0, 0, 0]
+		System.out.println("After filling with zero: "+list);
+		
+		Collections.unmodifiableList(list);//cannaot modified
+		Collections.unmodifiableSet(null);
+		Collections.unmodifiableMap(null);
+		Collections.unmodifiableSortedMap(null);
+		Collections.unmodifiableSortedSet(null);
+		Collections.unmodifiableCollection(null);
+--------------------
+Explain the difference between Comparable and Comparator.
+In Java, both Comparable and Comparator interfaces are used for sorting objects, but they differ in their implementation and purpose.
+Comparable provides a single sorting sequence. The Comparator provides multiple sorting sequences
+Comparable allows us to sort the collection on the basis of a single element such as id or name etc. Comparator allows us to sort the collection on the basis of multiple elements such as id and name etc
+The actual class is modified with Comparable. Comparator doesn't modify the actual class
+Comparable provides compareTo() method to sort elements. Comparator provides compare() method to sort elements.
+Comparable is present in java.lang package. A Comparator is present in java.util package.
+We can sort the list elements of Comparable type by Collections.sort(List) method. We can sort the list elements of Comparator type by Collections.sort(List, Comparator) method.
+---------------------
+What is a singleton class? Explain with a small code snippet
+A singleton class is a class that can have only one object (an instance of the class) at any point in time.
+After the first time Creation of an object, if we try to create the object for the Singleton class, the new object also points to the first instance created.
+Single ton class have controled access and memory saving and thread safe.
+In Java, a singleton class is a class that allows only one instance of itself to be created and ensures that this single instance is globally accessible throughout the application. This is typically achieved by providing a static method
+---------------------
+Life Cycle of Thread
+
+The thread can be in one of the states at a given point in time
+NEW: A thread that has not yet started is in this state.
+RUNNABLE: A thread executing in the Java virtual machine is in this state.
+BLOCKED: A thread that is blocked waiting for a monitor lock is in this state.
+WAITING: A thread that is waiting indefinitely for another thread to perform a particular action is in this state.
+TIMED_WAITING: A thread that is waiting for another thread to perform an action for up to a specified waiting time is in this state.
+TERMINATED: A thread that has exited is in this state.
+
+Commonly Used Methods in Java Thread.
+
+start(): Starts the thread.
+getState(): It returns the state of the thread.
+getName(): It returns the name of the thread.
+getPriority(): It returns the priority of the thread.
+sleep(): Stops the thread for the specified time.
+Join(): Stops the current thread until the called thread gets terminated.
+isAlive() : Checks if the thread is alive.
+---------------------
+13. What is garbage collection? How to force Garbage Collection?
+Garbage collection is the process by which Java programs perform automatic memory management. The garbage collector finds these unused objects and deletes them to free up memory.
+How to force Garbage Collection?
+Using System.gc()
+---------------------
+What is Typecasting explain with small code snippet?
+Typecasting is converting data from one data type to another data type.
+Typecasting can be applied to both primitive and non-primitive types.
+Typecasting process doesn't alter the data but alters the type.
+There are two types:
+Implicit casting
+Explicit casting
+Implicit casting: This is known as automatic typecasting. Usually, this happens when you converting a lower data type to a higher data type.
+int i = 10;
+float f = i;
+Explicit TypeCasting: Explicit casting involves assigning a data type of high range to a lower range. This casting needs to be done manually.
+float f = 3.142f;
+int  i = (int) f;
+----------------------------
+string.trim().replaceAll("\\s+", " ").split(" ");
+string.trim(): Removes leading and trailing whitespace from the string.
+replaceAll("\\s+", " "): Replaces all occurrences of one or more whitespace characters (such as spaces, tabs, newlines, etc.) with a single space. The regular expression \\s+ matches one or more whitespace characters.
+split(" "): Splits the resulting string into an array of substrings, using a single space as the delimiter.
+----------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
