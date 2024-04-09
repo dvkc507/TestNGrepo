@@ -23,7 +23,7 @@ public class DriverHandler {
 			 * driver.manage().timeouts().pageLoadTimeout(15, TimeUnit.SECONDS);
 			 */
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(15));
+			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(50));
 	}
 		catch(Exception e){
 			e.printStackTrace();

@@ -4,9 +4,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 import org.testng.Assert;
@@ -142,9 +144,38 @@ public class Pack4 {
 		System.out.println(set);//[1,2,3]
 		Integer[] intArr1 = {1,2,3,1,2,4};
 		list.retainAll(Arrays.asList(intArr1));//[1,2,3,1,2,3] removes uncommon elements
-		System.out.println(list);
+		System.out.println(list);	
+	}
+	@Test(description= "Iterating through the map using iterator")
+	public void iterateMap() {
+		Map<Integer,String> map = new LinkedHashMap();
+		map.put(1, "one");
+		map.put(2, "two");
+		map.put(3, "three");
+		Iterator itr = map.keySet().iterator();
+		while(itr.hasNext()) {
+			Object ele= itr.next();
+			System.out.println(map.get(ele));
+		}
+		Iterator<Entry<Integer,String>> itr2 = map.entrySet().iterator();
+		while(itr2.hasNext()) {
+			Entry<Integer,String> ele1= itr2.next();
+			System.out.println(ele1.getKey()+":"+ele1.getValue());
+		}
 		
-		
+	}
+	@Test(description= "missing number in a given array")
+	public void missingValueArray() {
+		int[] intarr = {1,2,3,5,6,7,8};
+		int len = intarr.length-1;
+		int count=1;
+		for(int i=0;i<len;i++) {
+			if(intarr[i] != count) {
+				System.out.println("Missing number is:" +count);
+				break;
+			}
+			count++;
+		}
 	}
 	
 	

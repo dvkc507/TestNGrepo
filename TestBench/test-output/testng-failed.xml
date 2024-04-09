@@ -3,11 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="prob.Pack4">
+      <class name="tests.Scenario8">
         <methods>
-          <include name="shiftZero"/>
+          <include name="popupAuthLogin"/>
+          <include name="setup"/>
+          <include name="teardown"/>
         </methods>
-      </class> <!-- prob.Pack4 -->
+      </class> <!-- tests.Scenario8 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
