@@ -34,5 +34,6 @@ public class Scenario9 {
 		Collections.unmodifiableSortedMap(null);
 		Collections.unmodifiableSortedSet(null);
 		Collections.unmodifiableCollection(null);
+		
 	}
 }
