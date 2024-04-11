@@ -1,1 +1,0 @@
-{"uuid":"0736bd75-ff64-4954-b65b-cb59659669c6","name":"tests.Scenario8.setup","children":["2f2b0026-190a-4d41-bc3e-a7c46473babe"],"description":"","befores":[{"name":"setup","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1712592509598,"stop":1712592512803}],"afters":[],"start":1712592509597,"stop":1712592512804}

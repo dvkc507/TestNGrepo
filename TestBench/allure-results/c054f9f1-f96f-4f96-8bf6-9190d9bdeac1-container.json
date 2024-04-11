@@ -1,1 +1,0 @@
-{"uuid":"c054f9f1-f96f-4f96-8bf6-9190d9bdeac1","name":"tests.Scenario8.teardown","children":["248bef39-6f09-482f-bfb7-b01c95ace4bb"],"description":"","befores":[],"afters":[{"name":"teardown","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1712593672693,"stop":1712593673376}],"start":1712593672693,"stop":1712593673376}

@@ -1,1 +1,0 @@
-{"uuid":"42a8e6cf-e058-45d0-be2a-f0e3f5db3531","name":"tests.Scenario7.cleanup","children":["50eb9db3-7d9b-4318-8b8e-1dcb2880221a"],"description":"","befores":[],"afters":[{"name":"cleanup","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1712388327925,"stop":1712388328282}],"start":1712388327924,"stop":1712388328282}
