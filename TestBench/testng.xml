@@ -4,15 +4,16 @@
 		<listener class-name="listners.MyTestListners" />
 		<listener class-name="io.qameta.allure.testng.AllureTestNg" />
 	</listeners>
-	<test thread-count="5" name="Test">
+	<test thread-count="4" name="Test" parallel="methods">
 		<classes>
-			<class name="tests.Scenario1" />
+<!-- 			<class name="tests.Scenario1" />
  			<class name="tests.Scenario2" />
 			<class name="tests.Scenario3" />
 			<class name="tests.Scenario4" /> 
 			<class name="tests.Scenario5" />
 			<class name="tests.Scenario6" />
-			<class name="tests.Scenario7" />
+			<class name="tests.Scenario7" /> -->
+			<class name="reasearch.Test1" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

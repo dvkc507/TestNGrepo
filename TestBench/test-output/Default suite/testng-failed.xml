@@ -3,11 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="restTests.postReadingFromTXT">
+      <class name="reasearch.Test2">
         <methods>
-          <include name="postAPI"/>
+          <include name="setup"/>
+          <include name="method1"/>
+          <include name="cleanup"/>
         </methods>
-      </class> <!-- restTests.postReadingFromTXT -->
+      </class> <!-- reasearch.Test2 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
